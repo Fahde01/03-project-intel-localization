@@ -1,4 +1,159 @@
 /* ========================================
+   RTL TOGGLE BUTTON STYLING
+   ======================================== */
+
+/* RTL toggle button styling */
+.rtl-toggle-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  color: #0a0e27;
+  border: 2px solid #00ff88;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.95em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+  font-family: 'Rajdhani', sans-serif;
+  z-index: 1000;
+}
+
+/* RTL toggle button hover state */
+.rtl-toggle-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.4), 0 0 15px rgba(0, 212, 255, 0.3);
+  background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+}
+
+/* RTL toggle button active/click state */
+.rtl-toggle-button:active {
+  transform: translateY(-1px);
+}
+
+/* RTL toggle button for RTL layout */
+html[dir="rtl"] .rtl-toggle-button {
+  right: auto;
+  left: 20px;
+}
+
+/* ========================================
+   RTL (RIGHT-TO-LEFT) LAYOUT SUPPORT
+   ======================================== */
+
+/* Set text direction and alignment for RTL languages */
+html[dir="rtl"],
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Ensure proper text alignment and flow */
+html[dir="rtl"] p,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] label,
+html[dir="rtl"] span {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Flexbox RTL adjustment */
+html[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+/* Ensure list items align properly in RTL */
+html[dir="rtl"] ul,
+html[dir="rtl"] ol {
+  padding-right: 40px;
+  padding-left: 0;
+}
+
+/* Header text alignment for RTL */
+html[dir="rtl"] header,
+html[dir="rtl"] header h1,
+html[dir="rtl"] header p {
+  text-align: center;
+}
+
+/* Navigation RTL support */
+html[dir="rtl"] nav {
+  text-align: right;
+}
+
+html[dir="rtl"] nav h2 {
+  text-align: right;
+}
+
+html[dir="rtl"] nav ul {
+  justify-content: flex-end;
+}
+
+/* Timeline section RTL - reverse scroll direction is natural */
+html[dir="rtl"] section div h2,
+html[dir="rtl"] section div h3,
+html[dir="rtl"] section div p {
+  text-align: right;
+}
+
+/* RTL input field handling */
+html[dir="rtl"] .form-control {
+  text-align: right;
+  padding: 12px 15px 12px 15px;
+}
+
+html[dir="rtl"] .form-control::placeholder {
+  text-align: right;
+}
+
+/* Subscription form RTL alignment */
+html[dir="rtl"] .subscription-form-wrapper {
+  text-align: center;
+}
+
+html[dir="rtl"] .subscription-form-wrapper h2,
+html[dir="rtl"] .subscription-form-wrapper p {
+  text-align: center;
+}
+
+/* RTL card and button alignment */
+html[dir="rtl"] .card-body {
+  text-align: right;
+}
+
+html[dir="rtl"] .card-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .card-text {
+  text-align: right;
+}
+
+/* RTL button alignment */
+html[dir="rtl"] .btn {
+  text-align: center;
+}
+
+html[dir="rtl"] .subscribe-btn {
+  text-align: center;
+}
+
+/* RTL icon positioning - ensure icons display correctly */
+html[dir="rtl"] .bi {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* ========================================
    TECH SECTION (Three-Column Custom Style)
    ======================================== */
 .tech-section {
@@ -358,8 +513,280 @@ body > p {
 }
 
 /* ========================================
+   FOOTER SECTION
+   ======================================== */
+
+/* Main footer container */
+.footer-section {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f2027 100%);
+  border-top: 3px solid #00d4ff;
+  box-shadow: 0 -8px 32px rgba(0, 212, 255, 0.15);
+  margin-top: 60px;
+  padding: 50px 20px 30px 20px;
+}
+
+/* Footer content wrapper */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer content grid - 4 columns */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Footer column styling */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer column title */
+.footer-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  color: #00d4ff;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+  padding-bottom: 10px;
+}
+
+/* Footer links list */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Footer link styling */
+.footer-link {
+  color: #b0e0ff;
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+/* Footer link hover effect */
+.footer-link:hover {
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+  transform: translateX(5px);
+}
+
+/* Footer bottom section */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* Copyright text */
+.copyright {
+  color: #7a9bc4;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9em;
+  margin: 0;
+  letter-spacing: 0.3px;
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Social links container */
+.social-links {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+/* Individual social link */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 255, 136, 0.1) 100%);
+  border: 2px solid #00d4ff;
+  border-radius: 50%;
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  font-size: 1em;
+}
+
+/* Social link hover effect */
+.social-link:hover {
+  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  border-color: #00ff88;
+  color: #0a0e27;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.4);
+}
+
+/* RTL footer adjustments */
+html[dir="rtl"] .footer-title,
+html[dir="rtl"] .footer-link,
+html[dir="rtl"] .copyright {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-link:hover {
+  transform: translateX(-5px);
+}
+
+html[dir="rtl"] .footer-bottom {
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .social-links {
+  justify-content: flex-start;
+}
+
+/* ========================================
    RESPONSIVE DESIGN
    ======================================== */
+/* ========================================
+   SUBSCRIPTION FORM SECTION
+   ======================================== */
+
+/* Container for the subscription form */
+.subscription-form-container {
+  background: linear-gradient(135deg, rgba(20,30,60,0.95) 0%, rgba(31,70,130,0.85) 100%);
+  padding: 50px 20px;
+  margin: 0;
+  border-top: 3px solid #00d4ff;
+  border-bottom: 3px solid #00ff88;
+  box-shadow: 0 8px 32px rgba(0,212,255,0.15);
+}
+
+/* Wrapper for form content - sets max width and centers content */
+.subscription-form-wrapper {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Heading above the form */
+.subscription-form-wrapper h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2em;
+  color: #00d4ff;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+}
+
+/* Description paragraph */
+.subscription-form-wrapper p {
+  font-family: 'Rajdhani', sans-serif;
+  color: #b0e0ff;
+  font-size: 1.05em;
+  margin-bottom: 30px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Main form styling */
+.subscription-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form group - wrapper for label and input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Labels for form inputs */
+.form-group label {
+  font-family: 'Rajdhani', sans-serif;
+  color: #00ff88;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Input field styling */
+.form-control {
+  font-family: 'Rajdhani', sans-serif;
+  background: rgba(31, 70, 130, 0.5);
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  padding: 12px 15px;
+  color: #e0e0e0;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+/* Input field focus state */
+.form-control:focus {
+  outline: none;
+  border-color: #00ff88;
+  background: rgba(31, 70, 130, 0.7);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3), 0 0 10px rgba(0, 212, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Placeholder text styling */
+.form-control::placeholder {
+  color: #7a9bc4;
+}
+
+/* Subscribe button styling */
+.subscribe-btn {
+  font-family: 'Rajdhani', sans-serif;
+  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  color: #0a0e27;
+  border: 2px solid #00ff88;
+  border-radius: 8px;
+  padding: 14px 30px;
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+/* Subscribe button hover state */
+.subscribe-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4), 0 0 20px rgba(0, 212, 255, 0.3);
+  background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+}
+
+/* Subscribe button active/click state */
+.subscribe-btn:active {
+  transform: translateY(-1px);
+}
+
 @media (max-width: 768px) {
   header h1 {
     font-size: 2.2em;
@@ -385,5 +812,33 @@ body > p {
 
   header img {
     width: 80px;
+  }
+
+  /* Responsive footer adjustments */
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-title {
+    font-size: 1em;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .social-links {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
+
+  .copyright {
+    width: 100%;
+    min-width: auto;
   }
 }
